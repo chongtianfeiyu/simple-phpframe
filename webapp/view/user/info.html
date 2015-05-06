@@ -1,0 +1,82 @@
+{%include file="module/header.html"%}
+
+		<form method="post" action="#">
+		<article class="mod_setting">
+			<h2 class="title">
+				个人资料
+				<a href="##" target="_blank" class="set_btn" title="我的主页">我的主页</a>
+			</h2>
+			<div class="mod_tab">
+				<p class="tab" attr="inner:tabContainer">
+					<a href="javascript:void(0)" class="cur">基本信息</a>
+					<a href="index.php?uri=/user/avatar/" class="">头像设置</a>
+				</p>
+			</div>
+			<div attr="root" style="">
+				<div class="basic_setting">
+					<table>
+						<tbody>
+							<tr>
+								<td class="title">头像:</td>
+								<td>
+									<div class="thumbnails">
+										<div class="cell_my_avatar">
+											<span class="avatar_bg"></span>
+											<img attr="photo" src="{%$user.user_face%}" />
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="title">*邮箱:</td>
+								<td>{%$user.user_email%}</td>
+							</tr>
+							<tr>
+								<td class="title">*昵称:</td>
+								<td>
+									<input type="text" name="nickname" value="{%$user.user_nickname%}" class="text write">
+									<input type="hidden" name="old_nickname" value="{%$user.user_nickname%}">
+								</td>
+							</tr>
+							<tr>
+								<td class="title">性别:</td>
+								<td>
+									<select name='sex'>
+										<option {%if $user.user_sex==0%}selected{%/if%} value="0">未选择</option>
+										<option {%if $user.user_sex==1%}selected{%/if%} value="1">男</option>
+										<option {%if $user.user_sex==2%}selected{%/if%} value="2">女</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="title">生日:</td>
+								<td>
+									<input type="text" name="birthday" value="{%$user.user_birthday%}">
+								</td>
+							</tr>
+							<tr>
+								<td class="title">所在地:</td>
+								<td>
+									<input type="text" name="location_code" value="{%$user.user_location_code%}">
+				<input type="hidden" name="location_name" value="{%$user.user_location_name%}">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="submit_box" attr="submitbox">
+					<a href="#javascript:void(0)" class="b_cancel_btn">取消</a>
+					<button class="b_save_btn">保存</button>
+				</p>
+					
+					<div style="clear:both"></div>
+				</div>
+		</article>
+		</form>
+
+
+
+
+
+
+{%include file="module/footer.html"%}

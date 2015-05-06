@@ -1,0 +1,17 @@
+{%include file="test-header.html"%}
+<body>
+	<h2>{%$name%}</h2>
+	{%$templatelite.CONST.SITE_URL%}
+	<br>
+
+	{%foreach from=$data key=k item=v%}
+
+		{%if $v.name=='xiaocai'%}
+			*
+		{%/if%}
+		{%$v.name%} , {%$v.age%} , {%$v.Date|date_format:"%A, %B %e, %Y"%}
+		<hr>
+	{%/foreach%}
+
+</body>
+</html>

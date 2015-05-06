@@ -1,0 +1,63 @@
+{%include file="module/header.html"%}
+<h2 class="title">用户注册</h2>
+<div style="padding:10px;">
+<form method="post" action="#">
+	<ul>
+		<li>
+			<div>登录邮箱：<em>*</em></div>
+			<div>
+				<input type="text" name="email" value="">
+			</div>
+		</li>
+		<li>
+			<div>昵称：<em>*</em></div>
+			<div>
+				<input type="text" name="nickname" value="">
+			</div>
+		</li>
+		<li>
+			<div>登录密码：<em>*</em></div>
+			<div>
+				<input type="password" name="password">
+			</div>
+		</li>
+		<li>
+			<div>确认密码：<em>*</em></div>
+			<div>
+				<input type="password" name="repassword">
+			</div>
+		</li>
+		<li>
+			<br>可选项<hr>
+		</li>
+		<li>
+			<div>性别:</div>
+			<div>
+				<select name='sex'>
+					<option value="0">未选择</option>
+					<option value="1">男</option>
+					<option value="2">女</option>
+				</select>
+			</div>
+		</li>
+		<li>
+			<div>生日：</div>
+			<div>
+				<input type="text" name="birthday" value="1989/12/06">
+			</div>
+		</li>
+		<li>
+			<div>所在地：</div>
+			<div>
+				<input type="text" name="location_code" value="">
+				<input type="hidden" name="location_name" value="">
+			</div>
+		</li>
+		<li>
+			<button>注册</button>
+		</li>
+	</ul>
+</form>
+</div>
+
+{%include file="module/footer.html"%}

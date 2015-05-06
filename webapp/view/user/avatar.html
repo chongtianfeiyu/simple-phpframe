@@ -1,0 +1,70 @@
+{%include file="module/header.html"%}
+
+		<form method="post" action="#">
+		<article class="mod_setting">
+			<h2 class="title">
+				个人资料
+				<a href="##" target="_blank" class="set_btn" title="我的主页">我的主页</a>
+			</h2>
+			<div class="mod_tab">
+				<p class="tab" attr="inner:tabContainer">
+					<a href="index.php?uri=/user/info/" class="">基本信息</a>
+					<a href="javascript:void(0)" class="cur">头像设置</a>
+				</p>
+			</div>
+			<div attr="root" style="">
+				<div class="basic_setting">
+					<table>
+						<tbody>
+							<tr>
+								<td class="title">头像:</td>
+								<td>
+									<div class="thumbnails">
+										<div class="cell_my_avatar">
+											<span class="avatar_bg"></span>
+											<img attr="photo" src="{%$user.user_face%}" />
+										</div>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<form id="upform" action="" method="post" encty​pe="multipart/form-data">
+					<div id="upload_img">
+						<div class="upinput">
+							<input id="upfileinput" name="upfileinput" type="file" />
+							<a event='upload' href="#">上传</a>
+						</div>
+						<div class="upmsg" style="display:none;">头像上传中...</div>
+					</div>
+					<div id="jcrop_img">
+						<div id='jcrop_msg'>
+							Loading...
+						</div>
+						<div style="width:100px;height:100px;overflow:hidden;">
+			            	<img id="preview"/>
+			            </div>
+						<div id="Canvas">
+							<img/>
+							<div>
+								<button type=save>保存</button>
+								<button type=cancel>放弃</button>
+							</div>
+						</div>
+						<div id="jcrop_hidden" style="display:none;">
+							<input type="hidden" name="img_src">
+							<input type="hidden" name="img_x">
+							<input type="hidden" name="img_y">
+							<input type="hidden" name="img_w">
+							<input type="hidden" name="img_h">
+						</div>
+
+					</div>
+					</form>
+				</div>
+				<div style="clear:both"></div>
+			</div>
+		</article>
+		</form>
+
+{%include file="module/footer.html"%}
